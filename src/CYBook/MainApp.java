@@ -41,6 +41,7 @@ public class MainApp {
                 System.out.println("\n(0) --> Quit");
                 System.out.print("\nYour choice : ");
 
+
                 try {
                     choice = sc.nextInt();
                 }
