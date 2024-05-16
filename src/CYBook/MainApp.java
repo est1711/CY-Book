@@ -3,15 +3,13 @@ package CYBook;
 import java.util.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainApp {
 
-
+    private static ArrayList<User> usersList;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -26,7 +24,6 @@ public class MainApp {
 
 
             //add loading data base methode
-
 
             while (true) {
                 System.out.println("Choose the option of your choice by typing the associated number");
@@ -117,15 +114,17 @@ public class MainApp {
 
     }
 
-    public static void bookSearch() {
+    private static void bookSearch() {
         System.out.println("Book search functionality will be implemented here.");
     }
 
-    public static void displayCustomerInformation() {
+    private static void displayCustomerInformation() {
         System.out.println("Display customer information functionality will be implemented here.");
     }
 
-    public static void viewOverdueBooks() {
+    private static void viewOverdueBooks() {
         System.out.println("View overdue books functionality will be implemented here.");
     }
+
+
 }
