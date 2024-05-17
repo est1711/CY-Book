@@ -1,0 +1,34 @@
+.root {
+    -fx-background-color: #f0f4f8; /* Couleur de fond */
+}
+
+Button {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-background-radius: 10px;
+    -fx-pref-width: 100%; /* Pour occuper toute la largeur */
+    -fx-pref-height: 25%; /* Pour occuper un quart de la hauteur */
+}
+
+#button1 {
+    -fx-background-color: #e74c3c; /* Rouge */
+}
+
+#button2 {
+    -fx-background-color: #3498db; /* Bleu */
+}
+
+#button3 {
+    -fx-background-color: #2ecc71; /* Vert */
+}
+
+#button4 {
+    -fx-background-color: #f39c12; /* Orange */
+}
+
+Button:hover {
+    -fx-background-color: #dcdcdc; /* Gris clair sur hover */
+    -fx-text-fill: black; /* Texte noir sur hover */
+}

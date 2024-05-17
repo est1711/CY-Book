@@ -14,6 +14,10 @@ public class User {
         this.id = ++idCount;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getFirstName() {
         return firstName;
     }
