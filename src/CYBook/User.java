@@ -85,4 +85,109 @@ public class User {
 
         return false;
     }
+
+    public static int userConnection(String name_customer, String last_name_customer, Connection connection) {
+        int userId = -1;
+        String query = "SELECT id_customer FROM customer WHERE name_customer = ? AND last_name_customer = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, name_customer);
+            statement.setString(2, last_name_customer);
+
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    userId = resultSet.getInt("id_customer");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userId;
+    }
+
+    public static boolean updateFirstNameById(int id_customer, String newFirstName, Connection connection) {
+        boolean updated = false;
+        try {
+            String query = "UPDATE customer SET name_customer = ? WHERE id_customer = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, newFirstName);
+                preparedStatement.setInt(2, id_customer);
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected > 0) {
+                    updated = true;
+                    System.out.println("First name updated successfully");
+                } else {
+                    System.out.println("Failed to update first name");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return updated;
+    }
+
+    public static boolean updateLastNameById(int id_customer, String newLastName, Connection connection) {
+        boolean updated = false;
+        try {
+            String query = "UPDATE customer SET last_name_customer = ? WHERE id_customer = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, newLastName);
+                preparedStatement.setInt(2, id_customer);
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected > 0) {
+                    updated = true;
+                    System.out.println("Last name updated successfully");
+                } else {
+                    System.out.println("Failed to update last name");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return updated;
+    }
+
+    public static boolean updateEmailById(int id_customer, String newEmail, Connection connection) {
+        boolean updated = false;
+        try {
+            String query = "UPDATE customer SET email_customer = ? WHERE id_customer = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, newEmail);
+                preparedStatement.setInt(2, id_customer);
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected > 0) {
+                    updated = true;
+                    System.out.println("Email updated successfully");
+                } else {
+                    System.out.println("Failed to update email");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return updated;
+    }
+
+
+    /*
+    public static boolean deleteUserById(int id_customer, Connection connection) {
+        boolean userDeleted = false;
+        String query = "DELETE FROM customer WHERE id_customer = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, id_customer);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                userDeleted = true;
+                System.out.println("Customer deleted successfully");
+            } else {
+                System.out.println("The user couldn't be deleted");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userDeleted;
+    }
+    */
+
 }

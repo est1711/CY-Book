@@ -3,13 +3,13 @@ package CYBook;
 import java.util.Date;
 
 public class Borrowing {
-    private User user;
+    private int id_user;
     private final Date STARTING_DATE;
     private final Date END_DATE ;
     private final int ISBN;
 
-    public Borrowing(User user ,Date STARTING_DATE,Date END_DATE,int ISBN ) {
-        this.user = user;
+    public Borrowing(int id_user ,Date STARTING_DATE,Date END_DATE,int ISBN ) {
+        this.id_user = id_user;
         this.END_DATE =  END_DATE;
         this.STARTING_DATE = STARTING_DATE;
         this.ISBN = ISBN;
