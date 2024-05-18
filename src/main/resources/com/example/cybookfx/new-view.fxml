@@ -5,9 +5,9 @@
 
 <VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cybookfx.NewController" stylesheets="@styles.css">
     <children>
-        <Button text="1. " id="button1" />
-        <Button text="2" id="button2" />
-        <Button text="3" id="button3" />
+        <Button text="1. Consult user account" id="button1" />
+        <Button text="2. Search a book" id="button2" />
+        <Button text="3. Overdue book list" id="button3" />
         <Button text="4" id="button4" />
     </children>
 </VBox>

@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 
-public class NewController {
+public class OverdueBookController {
 
     @FXML
     private Button backButton;
