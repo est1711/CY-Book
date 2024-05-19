@@ -5,9 +5,11 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cybookfx.MenuController">
+
     <children>
-        <Button text="Retour" onAction="#handleBackButton" />
-        <!-- Ajoutez ici les éléments de votre page Menu -->
+        <Button fx:id="buttonOverdueBook" text="1. Consult user account" onAction="#onOverdueBookButtonClick" />
+        <Button fx:id="buttonMenu" text="2. Search a book" onAction="#onMenuButtonClick" />
+        <Button fx:id="buttonNew" text="3. Overdue book list" onAction="#onNewButtonClick" />
     </children>
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>

@@ -8,14 +8,14 @@ import javafx.scene.control.Button;
 
 import java.io.IOException;
 
-public class NewController {
+public class SearchBookController {
 
     @FXML
     private Button backButton;
 
     @FXML
     public void handleBackButton() {
-        loadPage("hello-view.fxml");
+        loadPage("menu-view.fxml");
     }
 
     private void loadPage(String fxmlFile) {
